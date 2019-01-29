@@ -1,0 +1,62 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{siunitx}
+\usepackage{scrextend}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+
+\author{Michael Galliers}
+\title{CSC 499 LL Duplicate Removal Pseudo Code}
+\date{January 28, 2019}
+
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\noindent
+\textbf{Problem:} Remove duplicate values from a linked list.\\
+\textbf{Inputs:} linked list head node, $head$\\
+\textbf{Outputs:} the head node, now pointing to a linked list with no duplicates\\
+
+\noindent
+void $removeDuplicates$(LinkedList $head$)
+\{
+\begin{addmargin}{2em}
+	HashSet $unique$;\\
+	LinkedList $walk$;\\
+	$unique = $ new HashSet();\\
+	$unique.add(head.val)$;\\
+	$walk = head$;\\
+	while ($walk \text{ } != null \text{ } \&\& \text{ } walk.next \text{ } != null$) \{
+	\begin{addmargin}{2em}
+		if ($! unique.contains(walk.next.val)$) \{
+		\begin{addmargin}{2em}
+			$unique.add(walk.next.val)$;\\
+			$walk = walk.next$;
+		\end{addmargin}
+		\}\\
+		else
+		\begin{addmargin}{2em}
+			$walk.next = walk.next.next$;
+		\end{addmargin}
+	\end{addmargin}
+	\}
+	
+	
+\end{addmargin}
+\}\\\\
+
+Time complexity:
+$$\Theta (n) = n$$
+Where $n$ is the length of the linked list.
+
+\end{document}

@@ -42,7 +42,7 @@ public class Main {
      *
      * @return The head node of the linked list.
      */
-    private static LinkedList generate_list() {
+    private static LinkedList generateList() {
         Random rand = new Random();
         int size = rand.nextInt(25) + 1;
         LinkedList head = new LinkedList(rand.nextInt(10) + 1);
@@ -63,7 +63,7 @@ public class Main {
      *
      * @param head The head node of the list.
      */
-    private static void remove_duplicates(LinkedList head) {
+    private static void removeDuplicates(LinkedList head) {
         // Create a hash set.
         HashSet<Integer> unique = new HashSet<>();
         // Walker for linked list.
@@ -86,7 +86,7 @@ public class Main {
      *
      * @param head The head node of the linked list.
      */
-    private static void print_list(LinkedList head) {
+    private static void printList(LinkedList head) {
         // Print out a linked list.
         LinkedList walk = head;
 
@@ -108,12 +108,12 @@ public class Main {
      */
     public static void main(String[] args) {
         // Generate a linked list.
-        LinkedList new_list = generate_list();
+        LinkedList new_list = generateList();
         // Print it out.
-        print_list(new_list);
+        printList(new_list);
         // Remove any duplicates.
-        remove_duplicates(new_list);
+        removeDuplicates(new_list);
         // Print it again.
-        print_list(new_list);
+        printList(new_list);
     }
 }
